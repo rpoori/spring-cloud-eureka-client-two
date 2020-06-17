@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: cloud
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]}
+    nonSecurePort: 80
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${discovery.server.url}
